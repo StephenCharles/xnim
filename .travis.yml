@@ -1,17 +1,15 @@
+---
 language: c
-
 install:
-  - cd _test
-  - wget http://nim-lang.org/download/nim-0.11.2.tar.xz
-  - tar xf nim-0.11.2.tar.xz
-  - cd nim-0.11.2
-  - ./build.sh
-  - cd ../..
-
+- cd _test
+- wget http://nim-lang.org/download/nim-0.11.2.tar.xz
+- tar xf nim-0.11.2.tar.xz
+- cd nim-0.11.2
+- "./build.sh"
+- cd ../..
 before_script: export PATH=$PATH:$PWD/_test/nim-0.11.2/bin
-
 script:
-  - bin/fetch-configlet
-  - bin/configlet .
-  - nim c _test/check_exercises.nim > /dev/null
-  - _test/check_exercises
+- bin/fetch-configlet
+- bin/configlet .
+- nim c _test/check_exercises.nim > /dev/null
+- _test/check_exercises
